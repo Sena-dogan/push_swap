@@ -6,11 +6,66 @@
 /*   By: sena <sena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 03:47:21 by zdogan            #+#    #+#             */
-/*   Updated: 2023/04/22 18:44:24 by sena             ###   ########.fr       */
+/*   Updated: 2023/04/23 15:11:23 by sena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_atoi(const char *str)
+{
+	int				neg;
+	long long int	res;
+
+	neg = 1;
+	res = 0;
+	while (*str == ' ' || *str == '\n' || *str == '\t' || *str == '\v' \
+			|| *str == '\f' || *str == '\r')
+			str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			neg = -1;
+		str++;
+	}
+	while (*str && ft_isdigit(*str))
+	{
+		res = res * 10 + *str - 48;
+		str++;
+	}
+	if (res * neg > 2147483647 || res * neg < -2147483648)
+		return (0);
+	return ((int)(res * neg));
+}
+
+
+// int	ft_atoi(const char *str)
+// {
+// 	int				neg;
+// 	long long int	res;
+
+// 	neg = 1;
+// 	res = 0;
+// 	while (*str == ' ' || *str == '\n' || *str == '\t' || *str == '\v' \
+// 			|| *str == '\f' || *str == '\r')
+// 			str++;
+// 	if (*str == '-' || *str == '+')
+// 	{
+// 		if (*str == '-')
+// 			neg = -1;
+// 		str++;
+// 	}
+// 	while (*str && ft_isdigit(*str))
+// 	{
+// 		res = res * 10 + *str - 48;
+// 		if (res * neg > 2147483647)
+// 			return (-1);
+// 		if (res * neg < -2147483648)
+// 			return (0);
+// 		str++;
+// 	}
+// 	return ((int)(res * neg));
+// }
 
 long	ft_atol(const char *str)
 {
@@ -35,32 +90,4 @@ long	ft_atol(const char *str)
 		i++;
 	}
 	return (number);
-}
-
-int	ft_atoi(const char *str)
-{
-	int				neg;
-	long long int	res;
-
-	neg = 1;
-	res = 0;
-	while (*str == ' ' || *str == '\n' || *str == '\t' || *str == '\v' \
-			|| *str == '\f' || *str == '\r')
-			str++;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			neg = -1;
-		str++;
-	}
-	while (*str && ft_isdigit(*str))
-	{
-		res = res * 10 + *str - 48;
-		if (res * neg > 2147483647)
-			return (-1);
-		if (res * neg < -2147483648)
-			return (0);
-		str++;
-	}
-	return ((int)(res * neg));
 }

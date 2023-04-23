@@ -6,7 +6,7 @@
 /*   By: sena <sena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 19:50:39 by sena              #+#    #+#             */
-/*   Updated: 2023/04/23 14:29:10 by sena             ###   ########.fr       */
+/*   Updated: 2023/04/23 15:36:56 by sena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,6 @@ int	main(int argc, char **argv)
 		destroy(a, b, c);
 	}
 	else if (argv[1] && *(argv[1]) && argc >= 2)
-		ft_printf("%e","Error\n");
+		ft_printf(BRED"%e"RST, "Error\n");
 	return (0);
 }

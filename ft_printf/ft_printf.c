@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdogan <zdogan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sena <sena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 01:38:55 by zdogan            #+#    #+#             */
-/*   Updated: 2022/08/29 22:54:02 by zdogan           ###   ########.fr       */
+/*   Updated: 2023/04/23 15:43:47 by sena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,16 @@ int	ft_flagcontrol(char c, va_list ap)
 	else if (c == 'd' || c == 'i')
 		x += ft_putint(va_arg(ap, int), "0123456789");
 	else if (c == 's')
-		x += ft_putstr(va_arg(ap, char *));
+		x += ft_putstr(va_arg(ap, char *), 1);
 	else if (c == 'p')
 	{
-		x += ft_putstr("0x");
+		x += ft_putstr("0x", 1);
 		x += ft_hex(va_arg(ap, unsigned long long), c);
 	}
 	else if (c == 'u')
 		x += ft_putunsigned(va_arg(ap, unsigned int), "0123456789");
+	else if (c == 'e')
+		x += ft_putstr(va_arg(ap, char *), 2);
 	else if (c == '%')
 		x += ft_putchar('%');
 	return (x);

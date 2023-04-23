@@ -6,7 +6,7 @@
 /*   By: sena <sena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 19:49:45 by sena              #+#    #+#             */
-/*   Updated: 2023/04/23 14:28:46 by sena             ###   ########.fr       */
+/*   Updated: 2023/04/23 15:39:09 by sena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ void	ft_getarg(char **argv, t_swap *a, t_swap *b, t_swap *c)
 	i = 0;
 	while (i <= a->len)
 	{
-		if (ft_atol(argv[len]) > 2147483647 || ft_atol(argv[len]) < -2147483648)
+		if (ft_atoi(argv[len]))
 		{
-			ft_printf("%e","Error\n");
+			ft_printf(BRED"%e"RST, "Error\n");
 			destroy(a, b, c);
 			exit(0);
 		}
@@ -95,7 +95,7 @@ int	sort_check(int *stack, int len)
 		{
 			if (stack[i] == stack[x])
 			{
-				ft_printf("%e","Error\n");
+				ft_printf(BRED "%e" RST ,"Error\n");
 				return (0);
 			}
 		}

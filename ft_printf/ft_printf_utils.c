@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zdogan <zdogan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sena <sena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 01:36:37 by zdogan            #+#    #+#             */
-/*   Updated: 2022/08/30 00:31:52 by zdogan           ###   ########.fr       */
+/*   Updated: 2023/04/23 15:32:01 by sena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,18 @@ int	ft_putchar(char c)
 	return (write(1, &c, 1));
 }
 
-int	ft_putstr(char *str)
+int	ft_putstr(char *str, int flag)
 {
-	int	x;
+	char	*mem;
+	int		fd;
 
-	x = 0;
+	fd = flag;
 	if (!str)
-		return (ft_putstr("(null)"));
-	x += write(1, str, ft_strlen(str));
-	return (x);
+		return (ft_putstr("(null)", 1));
+	mem = str;
+	while (*str)
+		write(fd, str++, 1);
+	return (str - mem);
 }
 
 int	ft_hex(unsigned long long arg, char c)

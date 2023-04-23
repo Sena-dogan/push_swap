@@ -6,7 +6,7 @@
 /*   By: sena <sena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 14:18:26 by zdogan            #+#    #+#             */
-/*   Updated: 2023/03/14 20:45:13 by sena             ###   ########.fr       */
+/*   Updated: 2023/04/23 15:33:13 by sena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "colors.h"
 
 int	ft_putchar(char c);
-int	ft_putstr(char *str);
+int	ft_putstr(char *str, int flag);
 int	ft_hex(unsigned long long arg, char c);
 int	ft_putint(long arg, char *base);
 int	ft_putunsigned(unsigned long arg, char *base);
