@@ -6,7 +6,7 @@
 /*   By: sena <sena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 19:50:39 by sena              #+#    #+#             */
-/*   Updated: 2023/04/23 15:36:56 by sena             ###   ########.fr       */
+/*   Updated: 2023/04/23 15:58:07 by sena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	main(int argc, char **argv)
 		c = ft_calloc(sizeof(t_swap), 1);
 		argv = argv_init(argv, argc);
 		start_struct(a, b, c, argv);
-		selectin_sort(c->stack, c->len, 0);
+		selection_sort(c->stack, c->len, 0);
 		to_index(a, c);
 		if (a->len < 6)
 			little_sort(a, b);

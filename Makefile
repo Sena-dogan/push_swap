@@ -6,13 +6,13 @@
 #    By: sena <sena@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 18:37:48 by sena              #+#    #+#              #
-#    Updated: 2023/04/22 18:37:53 by sena             ###   ########.fr        #
+#    Updated: 2023/04/23 15:59:51 by sena             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 CFLAGSS = -Wall -Wextra -Werror
-SRCS = commands.c arg.c push_swap.c selectionSort.c utils.c radix.c single_sort.c
+SRCS = commands.c arg.c push_swap.c selection_sort.c utils.c radix.c single_sort.c
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 CC = gcc
