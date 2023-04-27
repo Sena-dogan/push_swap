@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   commands.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sena <sena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: zdogan <zdogan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 19:50:28 by sena              #+#    #+#             */
-/*   Updated: 2023/04/22 21:56:13 by sena             ###   ########.fr       */
+/*   Updated: 2023/04/27 16:14:25 by zdogan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push.h"
 
@@ -21,7 +20,7 @@ void	swap(t_swap *x, int flag)
 	x->stack[x->len - 2] = x->stack[x->len - 1];
 	x->stack[x->len - 1] = temp;
 	if (flag)
-		ft_printf(YEL"s%c\n"RST, x->id);
+		ft_printf("s%c\n", x->id);
 }
 
 void	push(t_swap *a, t_swap *b)
@@ -31,7 +30,7 @@ void	push(t_swap *a, t_swap *b)
 		b->len++;
 		b->stack[b->len - 1] = a->stack[a->len - 1];
 		a->len--;
-		ft_printf(YEL"p%c\n"RST, b->id);
+		ft_printf("p%c\n", b->id);
 	}
 }
 
@@ -49,7 +48,7 @@ void	rotate(t_swap *x, int flag)
 	ft_memmove(&x->stack[1], &x->stack[0], (x->len - 1) * 4);
 	x->stack[0] = temp;
 	if (flag)
-		ft_printf(YEL"r%c\n"RST, x->id);
+		ft_printf("r%c\n", x->id);
 }
 
 void	r_rotate(t_swap *x, int flag)
@@ -60,5 +59,5 @@ void	r_rotate(t_swap *x, int flag)
 	ft_memmove(&x->stack[0], &x->stack[1], (x->len - 1) * 4);
 	x->stack[x->len - 1] = temp;
 	if (flag)
-		ft_printf(YEL"rr%c\n"RST, x->id);
+		ft_printf("rr%c\n", x->id);
 }

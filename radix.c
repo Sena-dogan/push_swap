@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sena <sena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: zdogan <zdogan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 19:51:09 by sena              #+#    #+#             */
-/*   Updated: 2023/04/22 19:51:12 by sena             ###   ########.fr       */
+/*   Updated: 2023/04/27 16:09:53 by zdogan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push.h"
 
@@ -65,14 +64,11 @@ void	radix_sort(t_swap *a, t_swap *b)
 	max_bits = get_max_bits(a);
 	while (i <= max_bits)
 	{
-		ft_printstack(a);
 		j = 0;
 		size = a->len;
 		while (j < size)
 		{
 			radix_a(a, b, i);
-			ft_printstack(a);
-			ft_printstack(b);
 			j++;
 		}
 		i++;

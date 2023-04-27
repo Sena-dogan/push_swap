@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sena <sena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: zdogan <zdogan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 19:50:39 by sena              #+#    #+#             */
-/*   Updated: 2023/04/23 15:58:07 by sena             ###   ########.fr       */
+/*   Updated: 2023/04/27 16:36:49 by zdogan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push.h"
 
@@ -47,6 +46,8 @@ char	**argv_init(char **argv, int argc)
 		}
 		argv = ft_split(buffer, ' ');
 	}
+	if (!argv || !argv[0])
+		exit(0);
 	return (argv);
 }
 
@@ -92,6 +93,6 @@ int	main(int argc, char **argv)
 		destroy(a, b, c);
 	}
 	else if (argv[1] && *(argv[1]) && argc >= 2)
-		ft_printf(BRED"%e"RST, "Error\n");
+		ft_printf("%e", "Error\n");
 	return (0);
 }

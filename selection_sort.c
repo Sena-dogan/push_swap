@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   selection_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sena <sena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: zdogan <zdogan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 19:51:19 by sena              #+#    #+#             */
-/*   Updated: 2023/04/24 14:58:29 by sena             ###   ########.fr       */
+/*   Updated: 2023/04/27 17:04:22 by zdogan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_printarray(int *x, int size)
 	int	i;
 
 	i = size;
-	ft_printf(DMG"--------------%c Stack-----------\n"RST , 's');
+	ft_printf("--------------S Stack-----------\n");
 	while (--i >= 0)
-		ft_printf(VIO"%c[%d]: %d\n"RST, 's', i, x[i]);
+		ft_printf("%c[%d]: %d\n", 's', i, x[i]);
 }
 
 void	swap_index(int	*arr, int i, int j)
@@ -30,45 +30,6 @@ void	swap_index(int	*arr, int i, int j)
 	arr[i] = arr[j];
 	arr[j] = temp;
 }
-
-
-/*
-
-// 5 7 8 3
-// index = 0
-// min = 0
-
-
-i = 0
-j = 3
-x = 3
-
-return 0
-
----------
-i = 1
-j = 3
-x = 3
-
-return 3
-
-
-
---------
-i = 2
-j = 3
-x = 3
-
-return 3
-
--------
-i = 3
-j = 3
-
-
-*/
-
-
 
 int	min_index(int *arr, int i, int j)
 {
@@ -81,10 +42,6 @@ int	min_index(int *arr, int i, int j)
 		return (i);
 	return (x);
 }
-
-// 5 7 8 3
-// index = 0
-// min = 0
 
 void	selection_sort(int *stack, int size, int index)
 {

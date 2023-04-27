@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   push.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sena <sena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: zdogan <zdogan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 19:50:59 by sena              #+#    #+#             */
-/*   Updated: 2023/04/23 18:48:43 by sena             ###   ########.fr       */
+/*   Updated: 2023/04/27 17:04:50 by zdogan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef PUSH_H
 # define PUSH_H
@@ -42,6 +41,5 @@ void	destroy(t_swap *a, t_swap *b, t_swap *c);
 void	little_sort(t_swap *a, t_swap *b);
 void	swap(t_swap *x, int flag);
 int		repeat_check(int *stack, int len);
-
 
 #endif

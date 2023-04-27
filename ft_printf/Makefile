@@ -6,7 +6,7 @@
 #    By: zdogan <zdogan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/18 10:02:55 by zdogan            #+#    #+#              #
-#    Updated: 2022/08/28 02:09:49 by zdogan           ###   ########.fr        #
+#    Updated: 2023/04/27 16:06:45 by zdogan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
 clean:
+	make clean -C libft
 	rm -f $(OBJS)
 
 fclean: clean

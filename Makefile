@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sena <sena@student.42.fr>                  +#+  +:+       +#+         #
+#    By: zdogan <zdogan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/22 18:37:48 by sena              #+#    #+#              #
-#    Updated: 2023/04/23 15:59:51 by sena             ###   ########.fr        #
+#    Updated: 2023/04/27 16:07:44 by zdogan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,11 +31,12 @@ $(LIB) :
 	$(CC) $(CFLAGSS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS) $(NAME)
+	make clean -C ft_printf/
+	rm -rf $(OBJS)
 
 fclean: clean
 	make fclean -C ft_printf/
-	make fclean -C ft_printf/libft/	
+	rm -rf $(NAME)
 
 re: fclean all
 

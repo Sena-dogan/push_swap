@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   arg.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sena <sena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: zdogan <zdogan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 19:49:45 by sena              #+#    #+#             */
-/*   Updated: 2023/04/24 21:23:17 by sena             ###   ########.fr       */
+/*   Updated: 2023/04/27 17:02:49 by zdogan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push.h"
 
@@ -67,7 +66,7 @@ void	ft_getarg(char **argv, t_swap *a, t_swap *b, t_swap *c)
 	{
 		if (ft_atoi(argv[len]) == 0 && argv[len][0] != '0')
 		{
-			ft_printf(BRED"%e"RST, "Error\n");
+			ft_printf("%e", "Error\n");
 			destroy(a, b, c);
 			exit(0);
 		}
@@ -94,7 +93,7 @@ int	sort_check(int *stack, int len)
 		{
 			if (stack[i] == stack[x])
 			{
-				ft_printf(BRED "%e" RST ,"Error\n");
+				ft_printf("%e", "Error\n");
 				return (0);
 			}
 		}
